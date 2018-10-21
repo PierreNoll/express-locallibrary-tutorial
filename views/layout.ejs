@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LocalLibrary</title>
+
+    <% /* Viewport tag for sensible mobile support */ %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet', href='/stylesheets/style.css'>
+    <!--STYLES END-->
+  </head>
+
+  <body>
+    <div id="page-wrap">
+      <header id="page-header" class="navbar navbar-expand-sm navbar-light bg-light flex-column flex-md-row">
+          <a class="navbar-brand mr-0" href="/">
+            LOCAL_LIBRARY
+          </a>
+          <!-- First navbar -->
+          <div class="navbar-nav flex-row mr-auto">
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog">Home</a>
+            <a class="nav-item nav-link flex-nowrap ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/books">All books</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/authors">All authors</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/genres">All genres</a>
+            <a class="nav-item nav-link flex-nowrap ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/bookinstances">All book-instances</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/author/create">Create new author</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/genre/create">Create new genre</a>
+            <a class="nav-item nav-link flex-nowrap ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/bookinstances">All book-instances</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/book/create">Create new book</a>
+            <a class="nav-item nav-link ml-2 ml-md-0 mr-2 mr-md-0" href="/catalog/bookinstance/create">Create new book instance (copy)</a>
+          </div>
+
+      </header>
+
+      <%- body %>
+
+      <footer id="page-footer" class="navbar navbar-light justify-content-between flex-row-reverse">
+      </footer>
+    </div>
+
+
+    <% /*
+      Client-side JavaScript
+      ========================
+
+      Scripts can be hard-coded as «script» tags, automatically injected
+      by the asset pipeline between "SCRIPTS" and "SCRIPTS END", or both.
+      (https://sailsjs.com/docs/concepts/assets/task-automation)
+    */ %>
+
+    <% /* Load Stripe Checkout */ %>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <% /* Delete the global `self` to help avoid client-side bugs.
+    (see https://developer.mozilla.org/en-US/docs/Web/API/Window/self) */ %>
+    <script>delete window.self;</script>
+
+    <% /* Auto-injected «script» tags: */ %>
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
 
+var partials = require('express-partials'); // For handling layout
+
 var app = express();
 
 //Set up mongoose connection
@@ -21,6 +23,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(partials());
 
 app.use(logger('dev'));
 app.use(express.json());

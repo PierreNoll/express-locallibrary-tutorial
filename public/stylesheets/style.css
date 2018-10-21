@@ -1,8 +1,35 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 a {
   color: #00B7FF;
+}
+
+#page-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  height: @footer-height;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  .xs-only {
+    display: none;
+  }
+}
+
+#index {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#book_list {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#bookinstance_list {
+  padding-top: 75px;
+  padding-bottom: 75px;
 }
