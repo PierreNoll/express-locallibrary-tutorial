@@ -33,3 +33,23 @@ a {
   padding-top: 75px;
   padding-bottom: 75px;
 }
+
+#author_list {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#genre_list {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#genre_detail {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#book_detail {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}

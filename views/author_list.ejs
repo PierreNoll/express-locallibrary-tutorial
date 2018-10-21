@@ -1,0 +1,18 @@
+<div id="author_list">
+  <div class="container">
+    <h1><%- title%></h1>
+
+    <ul>
+      <% if (author_list.length){%>
+      <% for (var i = 0; i < author_list.length; i++) {%>
+        <li>
+          <a href='<%=author_list[i].url%>'> <%- author_list[i].name%></a>
+          (<%- author_list[i].date_of_birth_formatted%> - <%- author_list[i].date_of_death_formatted%>)
+        </li>
+
+        <% }} else {%>
+          <li> There are no authors.</li>
+          <%}%>
+        </ul>
+      </div>
+    </div>

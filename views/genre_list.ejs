@@ -1,0 +1,17 @@
+<div id="genre_list">
+  <div class="container">
+    <h1><%- title%></h1>
+
+    <ul>
+      <% if (genre_list.length){%>
+      <% for (var i = 0; i < genre_list.length; i++) {%>
+        <li>
+          <a href='<%=genre_list[i].url%>'> <%- genre_list[i].name%></a>
+        </li>
+
+        <% }} else {%>
+          <li> There are no genres.</li>
+          <%}%>
+        </ul>
+      </div>
+    </div>
