@@ -1,6 +1,8 @@
 <div id="book_form">
   <div class="container">
-    <h1><%-title%></h1>
+    <h1>
+      <%-title%>
+    </h1>
     <form method="post" action="">
       <div class="form-group">
         <label for="title">Title: </label>
@@ -10,13 +12,18 @@
         <label for="author">Author: </label>
         <select name="author" type="select" class="form-control" id="author" placeholder="Select author" required='true'>
           <% for (var i = 0; i < authors.length; i++) {%>
-            <% if (book) {%>
-              <option value=<%=authors[i]._id%> selected=<%=(authors[i]._id.toString()==book.author) ? 'selected' : false%>><%-authors[i].name%></option>
-            <%} else {%>
-              <option value=<%=authors[i]._id%>><%-authors[i].name%></option>
-            <%}%>
+          <% if (book) {%>
+          <option value=<%=authors[i]._id%>
+            <%-(authors[i]._id.toString()==book.author) ? 'selected' : false%>>
+            <%-authors[i].name%>
+          </option>
+          <%} else {%>
+          <option value=<%=authors[i]._id%>>
+            <%-authors[i].name%>
+          </option>
           <%}%>
-          </select>
+          <%}%>
+        </select>
       </div>
       <div class="form-group">
         <label for="summary">Summary: </label>
@@ -29,23 +36,28 @@
       <div class="form-group">
         <label>Genre: </label>
 
-          <%for (var i = 0; i < genres.length; i++) {%>
-            <div class="custom-control custom-checkbox">
-            <input name="genre" type="checkbox" class="custom-control-input" id=<%=genres[i]._id%> value=<%=genres[i]._id%> <%-genres[i].checked ? 'checked' : ''%>>
-            <label class="custom-control-label" for=<%=genres[i]._id%>><%=genres[i].name%></label>
-                    </div>
-          <%}%>
+        <%for (var i = 0; i < genres.length; i++) {%>
+        <div class="custom-control custom-checkbox">
+          <input name="genre" type="checkbox" class="custom-control-input" id=<%=genres[i]._id%> value=
+          <%=genres[i]._id%>
+          <%-genres[i].checked ? 'checked' : ''%>>
+          <label class="custom-control-label" for=<%=genres[i]._id%>>
+            <%=genres[i].name%></label>
+        </div>
+        <%}%>
 
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
     <% if (errors){%>
-      <ul>
+    <ul>
       <% for (var i = 0; i < errors.length; i++) {%>
-    <li><%-errors[i].msg%></li>
+      <li>
+        <%-errors[i].msg%>
+      </li>
       <%}%>
-  </ul>
-<%}%>
+    </ul>
+    <%}%>
   </div>
 </div>

@@ -1,26 +1,34 @@
 <div id="bookinstance_list">
   <div class="container">
-    <h1><%- title%></h1>
+    <h1>
+      <%- title%>
+    </h1>
 
     <ul>
       <% if (bookinstance_list.length){%>
       <% for (var i = 0; i < bookinstance_list.length; i++) {%>
-        <li>
-          <a href='<%=bookinstance_list[i].url%>'> <%- bookinstance_list[i].book.title%> : <%- bookinstance_list[i].book.imprint%></a>
-          <% if (bookinstance_list[i].status =='Available'){ %>
-          <span class="text-success"><%- bookinstance_list[i].status%></span>
-          <% } else if (bookinstance_list[i].status =='Maintenance'){ %>
-          <span class="text-danger"><%- bookinstance_list[i].status%></span>
-          <% } else { %>
-          <span class="text-warning"><%- bookinstance_list[i].status%></span>
-          <%} if(bookinstance_list[i].status !='Available'){%>
-            <span>(Due: <%-bookinstance_list[i].due_back_formatted%>)</span>
-            <%}%>
-        </li>
+      <li>
+        <a href='<%=bookinstance_list[i].url%>'>
+          <%- bookinstance_list[i].book.title%> :
+          <%- bookinstance_list[i].book.imprint%></a>
+        <% if (bookinstance_list[i].status =='Available'){ %>
+        <span class="text-success">
+          <%- bookinstance_list[i].status%></span>
+        <% } else if (bookinstance_list[i].status =='Maintenance'){ %>
+        <span class="text-danger">
+          <%- bookinstance_list[i].status%></span>
+        <% } else { %>
+        <span class="text-warning">
+          <%- bookinstance_list[i].status%></span>
+        <%} if(bookinstance_list[i].status !='Available'){%>
+        <span>(Due:
+          <%-bookinstance_list[i].due_back_formatted%>)</span>
+        <%}%>
+      </li>
 
-        <% }} else {%>
-          <li> There are no book copies in this library.</li>
-          <%}%>
-        </ul>
-      </div>
-    </div>
+      <% }} else {%>
+      <li> There are no book copies in this library.</li>
+      <%}%>
+    </ul>
+  </div>
+</div>

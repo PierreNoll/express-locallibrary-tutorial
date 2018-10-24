@@ -1,19 +1,24 @@
 <div id="genre_detail">
   <div class="container">
-    <h1>Genre: <%- genre.name%></h1>
+    <h1>Genre:
+      <%- genre.name%>
+    </h1>
 
     <h4> Books </h4>
     <dl>
       <% if (genre_books.length){%>
       <% for (var i = 0; i < genre_books.length; i++) {%>
-        <dt>
-          <a href='<%=genre_books[i].url%>'> <%- genre_books[i].title%></a>
-          <dd><%-genre_books[i].summary%></dd>
-        </dt>
+      <dt>
+        <a href='<%=genre_books[i].url%>'>
+          <%- genre_books[i].title%></a>
+      <dd>
+        <%-genre_books[i].summary%>
+      </dd>
+      </dt>
 
-        <% }} else {%>
-          <p> There are no books.</p>
-          <%}%>
-        </dl>
-      </div>
-    </div>
+      <% }} else {%>
+      <p> There are no books.</p>
+      <%}%>
+    </dl>
+  </div>
+</div>
