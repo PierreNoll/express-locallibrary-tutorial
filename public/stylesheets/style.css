@@ -68,3 +68,18 @@ a {
   padding-top: 75px;
   padding-bottom: 75px;
 }
+
+#book_form {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#bookinstance_form {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#author_delete {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
