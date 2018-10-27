@@ -6,15 +6,14 @@
     <form method="post" action="">
       <div class="form-group">
         <label for="title">Title: </label>
-        <input name="title" type="text" class="form-control" id="title" placeholder="Name of book" value=<%=(!book) ? '' : book.title%>>
+        <input name="title" type="text" class="form-control" id="title" placeholder="Name of book" value="<%=(!book) ? '' : book.title%>">
       </div>
       <div class="form-group">
         <label for="author">Author: </label>
         <select name="author" type="select" class="form-control" id="author" placeholder="Select author" required='true'>
           <% for (var i = 0; i < authors.length; i++) {%>
           <% if (book) {%>
-          <option value=<%=authors[i]._id%>
-            <%-(authors[i]._id.toString()==book.author) ? 'selected' : false%>>
+          <option value="<%=authors[i]._id%>" <%-(authors[i]._id.toString()==book.author) ? 'selected' : false%>>
             <%-authors[i].name%>
           </option>
           <%} else {%>
@@ -27,7 +26,7 @@
       </div>
       <div class="form-group">
         <label for="summary">Summary: </label>
-        <textarea name="summary" class="form-control" id="summary" placeholder="Summary" value=<%=(!book) ? '' : book.summary%> rows=3></textarea>
+        <textarea name="summary" class="form-control" id="summary" placeholder="Summary" rows=3><%=(!book) ? '' : book.summary%></textarea>
       </div>
       <div class="form-group">
         <label for="isbn">ISBN: </label>

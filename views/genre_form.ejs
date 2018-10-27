@@ -6,7 +6,7 @@
     <form method="post" action="">
       <div class="form-group">
         <label for="name">Genre: </label>
-        <input name="name" type="text" class="form-control" id="name" placeholder="Fantasy, Poetry etc." required='true' value=<%=(!genre) ? '' : genre.name%>>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Fantasy, Poetry etc." required='true' value="<%=(!genre) ? '' : genre.name%>">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>

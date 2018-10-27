@@ -23,11 +23,11 @@
       </div>
       <div class="form-group">
         <label for="imprint">Imprint: </label>
-        <input name="imprint" type="text" class="form-control" id="imprint" placeholder="Publisher and date information" value=<%=(!bookinstance) ? '' : bookinstance.imprint%>>
+        <input name="imprint" type="text" class="form-control" id="imprint" placeholder="Publisher and date information" value="<%=(!bookinstance) ? '' : bookinstance.imprint%>">
       </div>
       <div class="form-group">
         <label for="due_back">Date when book available: </label>
-        <input name="due_back" type="date" class="form-control" id="due_back" placeholder="YYYY-MM-DD" value=<%=(!bookinstance) ? '' : bookinstance.due_back%>>
+        <input name="due_back" type="date" class="form-control" id="due_back" placeholder="YYYY-MM-DD" value="<%=(!bookinstance) ? '' : bookinstance.due_back%>">
       </div>
       <div class="form-group">
         <label for="status">Status: </label>
