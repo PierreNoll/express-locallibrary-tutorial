@@ -139,18 +139,19 @@ exports.bookinstance_create_post = [
 // Display BookInstance delete form on GET.
 exports.bookinstance_delete_get = function(req, res, next) {
 
-      BookInstance.findById(req.params.id).exec(
-    function(err, results) {
+      BookInstance.findById(req.params.id)
+      .populate('book')
+      .exec(function(err, bookinstance) {
       if (err) {
         return next(err);
       }
-      if (results.bookinstance == null) { // No results
+      if (bookinstance==null) { // No results
         res.redirect('/catalog/bookinstances')
       }
       // Successful so Render
       res.render('bookinstance_delete', {
         title: 'Delete Book Instance',
-        bookinstance: results.bookinstance
+        bookinstance: bookinstance
       })
     }
   )
@@ -159,8 +160,8 @@ exports.bookinstance_delete_get = function(req, res, next) {
 // Handle BookInstance delete on POST.
 exports.bookinstance_delete_post = function(req, res, next) {
 
-  BookInstance.findById(req.body.bookinstanceid).exec(
-    function(err, results) {
+  BookInstance.findById(req.body.bookinstanceid)
+  .exec(function(err, bookinstance) {
       if (err) {
         return next(err);
       }
