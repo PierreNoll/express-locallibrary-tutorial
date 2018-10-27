@@ -14,11 +14,11 @@
       </div>
       <div class="form-group">
         <label for="date_of_birth">Date of birth: </label>
-        <input name="date_of_birth" type="date" class="form-control" id="date_of_birth" placeholder="YYYY-MM-DD" required='true' value="<%=(!author) ? '' : author.date_of_birth%>">
+        <input name="date_of_birth" type="date" class="form-control" id="date_of_birth" placeholder="YYYY-MM-DD" required='true' value="<%=(!author) ? '' : author.date_of_birth_formatted_form%>">
       </div>
       <div class="form-group">
         <label for="date_of_death">Date of death: </label>
-        <input name="date_of_death" type="date" class="form-control" id="date_of_death" placeholder="YYYY-MM-DD" required='false' value="<%=(!author) ? '' : author.date_of_death%>">
+        <input name="date_of_death" type="date" class="form-control" id="date_of_death" placeholder="YYYY-MM-DD" required='false' value="<%=(!author) ? '' : author.date_of_death_formatted_form%>">
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
