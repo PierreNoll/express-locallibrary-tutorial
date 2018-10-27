@@ -83,3 +83,18 @@ a {
   padding-top: 75px;
   padding-bottom: 75px;
 }
+
+#book_delete {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#bookinstance_delete {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+#genre_delete {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
