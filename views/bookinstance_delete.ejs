@@ -1,4 +1,4 @@
-<div id="bookinstance_detail">
+<div id="bookinstance_delete">
   <div class="container">
     <h1>ID:
       <%-bookinstance._id%>
@@ -27,8 +27,11 @@
       <%- bookinstance.due_back_formatted%>
     </p>
     <%}%>
-    <hr>
-    <p> <a href="<%=bookinstance.url+'/delete'%>">Delete book instance</a> </p>
-    <p> <a href="<%=bookinstance.url+'/update'%>">Update book instance</a> </p>
+    <form method="post" action="">
+      <div class="form-group">
+        <input name="bookinstanceid" type="hidden" class="form-control" id="bookinstanceid" required='true' value=<%=bookinstance._id%>>
+      </div>
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
   </div>
 </div>
