@@ -198,7 +198,7 @@ exports.bookinstance_update_get = function(req, res, next) {
         return next(err);
       }
       if (results.bookinstance == null) { // No results.
-        var err = new Error('Book not found');
+        var err = new Error('BookInstance not found');
         err.status = 404;
         return next(err);
       }
