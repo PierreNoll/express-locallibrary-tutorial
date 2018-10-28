@@ -6,19 +6,26 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
+var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site.
+
+var compression = require('compression'); // To compress html response to send to the clients. For a high-traffic website in production you wouldn't use this middleware. Instead you would use a reverse proxy like Nginx.
+var helmet = require('helmet'); // middleware to setting appropriate HTTP headers to help protect from well known vulnerabilities
 
 var partials = require('express-partials'); // For handling layout
 
 var app = express();
 
+app.use(helmet()); // Declaring early so sure that the app is protected
+
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://express-app:'+process.env.MLAB_PASS+'@ds237363.mlab.com:37363/local_library_tuto';
+var mongoDB = process.env.MONGO_DB_URI || 'mongodb://express-app:'+process.env.MLAB_PASS+'@ds237363.mlab.com:37363/local_library_tuto';
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+app.use(compression()); // Before all routes so compress all routes
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
