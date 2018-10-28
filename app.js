@@ -19,7 +19,7 @@ app.use(helmet()); // Declaring early so sure that the app is protected
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = process.env.MONGO_DB_URI || 'mongodb://express-app:'+process.env.MLAB_PASS+'@ds237363.mlab.com:37363/local_library_tuto';
+var mongoDB = process.env.MONGO_DB_URI ;
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
